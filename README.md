@@ -1,71 +1,49 @@
-# ballerina-lint README
+# Ballerina Lint
 
-This is the README for your extension "ballerina-lint". After writing up a brief description, we recommend including the following sections.
+A VS Code extension that provides linting and best practices for Ballerina code.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Code analysis for Ballerina files
+- Best practices enforcement
+- Naming convention checking
+- Error handling validation
+- Sidebar panel showing all issues in the current file
 
-For example if there is an image subfolder under your extension project workspace:
+## How to Use
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Install the extension
+2. Open a Ballerina file
+3. The extension will automatically analyze your code
+4. View issues in:
+   - Problems panel
+   - Inline in the editor
+   - Dedicated sidebar (click the Ballerina Lint icon in the activity bar)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Sidebar Panel
 
-## Requirements
+The extension adds a dedicated sidebar to VS Code. Click on the Ballerina Lint icon in the activity bar to open it.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The sidebar shows:
+- A list of files with issues
+- For each file, a list of issues with their locations
+- Click on any issue to navigate directly to its location in the code
 
-## Extension Settings
+To refresh the issue list manually, click the refresh button at the top of the panel.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Rules
 
-For example:
+The extension checks for the following categories of rules:
+- Naming conventions
+- Code structure
+- Error handling
+- Logging practices
+- Loop optimizations
 
-This extension contributes the following settings:
+## Contributing
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Feel free to contribute to this extension by submitting issues or pull requests.
 
-## Known Issues
+## License
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[License information]

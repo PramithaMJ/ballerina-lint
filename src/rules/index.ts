@@ -4,8 +4,12 @@ import { errorHandlingRules } from "./errorHandling";
 import { loggingRules } from "./loggingRules";
 import { loopRules } from "./loopRules";
 import { structureRules } from "./structureRules";
+import { BallerinaRule } from "./types";
 
-export const ballerinaBestPractices = [
+// Export the type for use in other files
+export { BallerinaRule };
+
+export const ballerinaBestPractices: BallerinaRule[] = [
   ...namingConventions,
   ...errorHandlingRules,
   ...loggingRules,

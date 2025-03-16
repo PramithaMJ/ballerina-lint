@@ -25,7 +25,47 @@
           "Ballerina"
         ]
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ballerina-lint",
+          "title": "Ballerina Lint",
+          "icon": "resources/ballerina-lint.svg"
+        }
+      ]
+    },
+    "views": {
+      "ballerina-lint": [
+        {
+          "id": "ballerina-lint-issues",
+          "name": "Best Practices"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ballerina-lint.showIssuesPanel",
+        "title": "Ballerina Lint: Show Issues Panel"
+      },
+      {
+        "command": "ballerina-lint.refreshIssues",
+        "title": "Ballerina Lint: Refresh Issues",
+        "icon": {
+          "light": "resources/refresh-light.svg",
+          "dark": "resources/refresh-dark.svg"
+        }
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "ballerina-lint.refreshIssues",
+          "when": "view == ballerina-lint-issues",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
