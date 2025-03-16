@@ -11,18 +11,22 @@
     "Linters"
   ],
   "activationEvents": [
-    "onLanguage:ballerina",
-    "onCommand:ballerina-lint.applyFix"
+    "onLanguage:ballerina"
   ],
+  "main": "./out/extension.js",
   "contributes": {
-    "commands": [
+    "languages": [
       {
-        "command": "ballerina-lint.applyFix",
-        "title": "Apply Ballerina Lint Fix"
+        "id": "ballerina",
+        "extensions": [
+          ".bal"
+        ],
+        "aliases": [
+          "Ballerina"
+        ]
       }
     ]
   },
-  "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

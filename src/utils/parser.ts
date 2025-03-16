@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { ballerinaBestPractices } from "../rules";
+import { ballerinaBestPractices } from "../rules/index";
 
 /**
  * Parses the Ballerina document and applies best practice rules.
