@@ -58,4 +58,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.section-title, .feature-card, .practice-card, .screenshot-card, .step').forEach(element => {
         observer.observe(element);
     });
+
+    // Add animations for a smoother experience
+    document.querySelectorAll('.feature-card, .practice-card, .screenshot-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-8px)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(-5px)';
+        });
+    });
 });
