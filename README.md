@@ -4,6 +4,20 @@
 
 A fully functional Ballerina best practices checker extension for Visual Studio Code. This linter helps developers adhere to Ballerina programming best practices, enhancing code quality and maintainability.
 
+
+## Table of Contents
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Supported Best Practices](#supported-best-practices)
+- [Installation](#installation)
+- [Requirements](#requirements)
+- [Extension Settings](#extension-settings)
+- [Usage](#usage)
+- [Coming Soon](#coming-soon)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 ## Screenshots
 
 ### Issue Detection in Editor
