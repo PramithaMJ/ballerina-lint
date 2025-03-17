@@ -1,6 +1,6 @@
 # Ballerina Lint
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/PramithaMJ/ballerina-lint/releases/tag/v1.0.0) [![Ballerina](https://img.shields.io/badge/Ballerina-2.0.0-20b6b0.svg)](https://ballerina.io/)
+[![License: Apache](https://img.shields.io/badge/License-Apache-yellow.svg)](https://opensource.org/licenses/Apache) [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/PramithaMJ/ballerina-lint/releases/tag/v1.0.0) [![Ballerina](https://img.shields.io/badge/Ballerina-2.0.0-20b6b0.svg)](https://ballerina.io/)
 
 A fully functional Ballerina best practices checker extension for Visual Studio Code. This linter helps developers adhere to Ballerina programming best practices, enhancing code quality and maintainability.
 
