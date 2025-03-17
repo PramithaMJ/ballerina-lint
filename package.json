@@ -2,22 +2,70 @@
   "name": "ballerina-lint",
   "displayName": "ballerina-lint",
   "description": "A fully functional Ballerina best practices checker",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "PramithaMJ",
   "engines": {
     "vscode": "^1.98.0"
   },
   "categories": [
-    "Other"
+    "Linters"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:ballerina"
+  ],
   "main": "./out/extension.js",
   "contributes": {
+    "languages": [
+      {
+        "id": "ballerina",
+        "extensions": [
+          ".bal"
+        ],
+        "aliases": [
+          "Ballerina"
+        ]
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ballerina-lint",
+          "title": "Ballerina Lint",
+          "icon": "resources/ballerina-lint.svg"
+        }
+      ]
+    },
+    "views": {
+      "ballerina-lint": [
+        {
+          "id": "ballerina-lint-issues",
+          "name": "Best Practices"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "ballerina-lint.helloWorld",
-        "title": "Hello World"
+        "command": "ballerina-lint.showIssuesPanel",
+        "title": "Ballerina Lint: Show Issues Panel"
+      },
+      {
+        "command": "ballerina-lint.refreshIssues",
+        "title": "Ballerina Lint: Refresh Issues",
+        "icon": {
+          "light": "resources/refresh-light.svg",
+          "dark": "resources/refresh-dark.svg"
+        }
       }
-    ]
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "ballerina-lint.refreshIssues",
+          "when": "view == ballerina-lint-issues",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
