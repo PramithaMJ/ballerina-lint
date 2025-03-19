@@ -5,6 +5,7 @@
 A fully functional Ballerina best practices checker extension for Visual Studio Code. This linter helps developers adhere to Ballerina programming best practices, enhancing code quality and maintainability.
 
 ## Table of Contents
+- [Website](#website)
 - [Screenshots](#screenshots)
 - [Features](#features)
 - [Supported Best Practices](#supported-best-practices)
@@ -16,6 +17,9 @@ A fully functional Ballerina best practices checker extension for Visual Studio 
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
+
+## Website
+Visit the official [Ballerina Lint](https://pramithamj.github.io/ballerina-lint/) website for more information.
 
 ## Screenshots
 
