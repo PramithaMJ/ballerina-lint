@@ -4,7 +4,6 @@
 
 A fully functional Ballerina best practices checker extension for Visual Studio Code. This linter helps developers adhere to Ballerina programming best practices, enhancing code quality and maintainability.
 
-
 ## Table of Contents
 - [Screenshots](#screenshots)
 - [Features](#features)
@@ -50,31 +49,68 @@ A fully functional Ballerina best practices checker extension for Visual Studio 
 
 ### Supported Best Practices
 
-Based on [Learn Ballerina](https://learn-ballerina.github.io/) guidelines, this extension checks for:
+This extension checks for a comprehensive set of best practices in the following categories:
 
-1. **Proper Error Handling**
-   - Ensure errors are properly handled and not ignored
-   - Check for appropriate error propagation
+#### 1. Nil Handling
+- Using nil (`()`) to represent optional values instead of empty strings
+- Properly returning nil for unavailable values rather than sentinel values
+- Using Elvis operator with proper default values
+- Avoiding unnecessary type casts
 
-2. **Memory Management**
-   - Identify potential memory leaks
-   - Suggest optimizations for resource-intensive operations
+#### 2. Expression Style
+- Using expression-bodied functions for simple returns
+- Avoiding unnecessary parentheses in if statements
+- Simplifying mapping constructors
+- Avoiding overuse of `var` keyword
+- Using proper if-else vs match statements
 
-3. **API Design Principles**
-   - Check for consistent API naming conventions
-   - Ensure proper documentation of public APIs
+#### 3. Type Handling
+- Using application-defined types instead of `json`, `any`, or `anydata`
+- Using precise types for better type safety
+- Working with value ranges
+- Properly using enums and unions for constants
+- Using open vs closed records appropriately
 
-4. **Concurrency Best Practices**
-   - Detect common concurrency pitfalls
-   - Suggest improvements for concurrent code
+#### 4. Return Values
+- Returning errors instead of invalid values
+- Using the `check` keyword properly
+- Avoiding unnecessary `panic` statements
+- Using tuples to return multiple values
+- Using early returns for cleaner code
 
-5. **Security Practices**
-   - Identify potential security vulnerabilities
-   - Enforce secure coding patterns
+#### 5. Code Organization
+- Limiting line length to 120 characters
+- Avoiding redundant variables
+- Avoiding unnecessary comments
+- Using proper string concatenation with string templates
 
-6. **Performance Optimizations**
-   - Suggest more efficient code alternatives
-   - Highlight performance bottlenecks
+#### 6. Formatting
+- Sorting imports properly (same package, ballerina/ballerinax, third-party)
+- Adding line breaks between import statements
+- Using spaces instead of tabs for indentation
+- Avoiding excessive blank lines
+
+#### 7. Documentation
+- Documenting public constructs
+- Adding periods at the end of function descriptions
+- Using proper documentation style with `#` instead of `//` comments
+- Documenting record fields properly
+
+#### 8. Configuration Management
+- Handling sensitive configurations securely
+- Providing default values for non-sensitive configurable values
+- Using descriptive names for configuration variables
+
+#### 9. Dependency Management
+- Using relative paths for JAR dependencies
+- Specifying modules that use dependencies to restrict usage
+- Following best practices for reproducible builds
+
+#### 10. General Programming
+- Proper error handling and propagation
+- Descriptive naming for functions and variables
+- Using constants properly with UPPER_CASE_WITH_UNDERSCORES naming
+- Using proper logging patterns
 
 ## Installation
 
@@ -110,6 +146,20 @@ This extension contributes the following settings:
 4. Hover over highlighted code to see details about the issue
 5. Use the Ballerina Lint sidebar to see all detected issues in your workspace
 6. Click on issues to navigate to the corresponding code location
+7. Use the Quick Fix feature (light bulb icon) to apply suggested fixes
+
+### Creating Test Files
+
+To test the extension with sample code that demonstrates various best practices:
+
+1. Create a new directory in your project: `test/samples/`
+2. Create test files for different categories:
+   - `nilHandlingTest.bal` - Tests for nil handling rules
+   - `expressionStyleTest.bal` - Tests for expression style rules
+   - `typeTest.bal` - Tests for type handling rules
+   - `formatDocTest.bal` - Tests for formatting and documentation rules
+
+3. Run the extension in debug mode (F5) and open these test files to see the linter in action
 
 ## Coming Soon
 
@@ -118,6 +168,8 @@ This extension contributes the following settings:
 - Rule customization through configuration files
 - Team-based rule sharing
 - VS Code Marketplace release
+- Support for automated fixing of multiple issues at once
+- Custom rule creation interface
 
 ## Contributing
 
