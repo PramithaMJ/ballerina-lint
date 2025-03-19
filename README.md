@@ -50,6 +50,29 @@ A fully functional Ballerina best practices checker extension for Visual Studio 
 ### Supported Best Practices
 
 This extension checks for a comprehensive set of best practices in the following categories:
+1. **Proper Error Handling**
+   - Ensure errors are properly handled and not ignored
+   - Check for appropriate error propagation
+
+2. **Memory Management**
+   - Identify potential memory leaks
+   - Suggest optimizations for resource-intensive operations
+
+3. **API Design Principles**
+   - Check for consistent API naming conventions
+   - Ensure proper documentation of public APIs
+
+4. **Concurrency Best Practices**
+   - Detect common concurrency pitfalls
+   - Suggest improvements for concurrent code
+
+5. **Security Practices**
+   - Identify potential security vulnerabilities
+   - Enforce secure coding patterns
+
+6. **Performance Optimizations**
+   - Suggest more efficient code alternatives
+   - Highlight performance bottlenecks
 
 #### 1. Nil Handling
 - Using nil (`()`) to represent optional values instead of empty strings
