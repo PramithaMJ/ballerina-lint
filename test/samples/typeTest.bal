@@ -38,18 +38,6 @@ function setPriority(int priority) {
     }
 }
 
-// Using index-based iteration instead of range expressions
-function processData(string[] data) {
-    int index = 0;
-    foreach var val in data {
-        index += 1;
-        if (index == 1) {
-            continue; // Need to skip the first value in array
-        }
-        io:println(val);
-    }
-}
-
 // Using for-each instead of query expressions
 function filterActiveUsers(User[] users) returns User[] {
     User[] activeUsers = [];
