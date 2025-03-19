@@ -2,25 +2,22 @@ import ballerina/io;
 import ballerina/http;
 
 // Using json, any, and anydata instead of application-defined types
-function processData(json data) {
-    json name = data.name;
-    json age = data.age;
-    json address = data.address;
+function processData(json data) returns error? {
+    json name = check data.name;
+    json age = check data.age;
+    json address = check data.address;
     
     io:println(name.toString() + " is " + age.toString() + " years old");
 }
 
-// Using any type without more specific typing
 function handleInput(any input) {
     io:println(input);
 }
 
-// Using anydata when specific types could be used
 function calculateMetrics(anydata[] values) {
     // Implementation
 }
 
-// Explicit type for constants when not needed
 const int MAX_SIZE = 1000;
 const string FILE_NAME_PREFIX = "Summary";
 const boolean IS_ACTIVE = true;
