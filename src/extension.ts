@@ -1,8 +1,9 @@
-import * as vscode from 'vscode';
-import * as path from 'path';
-import { DiagnosticInfo, createDiagnostic } from './utils/diagnostics';
-import { executeAllRules } from './rules';
-import { IssueTreeDataProvider } from './views/issueTreeDataProvider';
+import * as vscode from "vscode";
+import * as path from "path";
+import { DiagnosticInfo, createDiagnostic } from "./utils/diagnostics";
+import { executeAllRules } from "./rules";
+import { IssueTreeDataProvider } from "./views/issueTreeDataProvider";
+import { registerCodeActions } from "./utils/fixer";
 
 let diagnosticCollection: vscode.DiagnosticCollection;
 
@@ -20,6 +21,9 @@ export function activate(context: vscode.ExtensionContext) {
   diagnosticCollection =
     vscode.languages.createDiagnosticCollection("ballerina-lint");
   context.subscriptions.push(diagnosticCollection);
+
+  // Register code actions
+  registerCodeActions(context);
 
   // Create issue tree data provider
   const issueTreeDataProvider = new IssueTreeDataProvider(diagnosticCollection);

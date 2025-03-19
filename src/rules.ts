@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { ballerinaBestPractices } from "./rules/index";
+import { ballerinaBestPractices, BallerinaRule } from "./rules/index";
 import { DiagnosticInfo } from "./utils/diagnostics";
 
 export function executeAllRules(
@@ -12,11 +12,14 @@ export function executeAllRules(
   const text = document.getText();
   const violations: DiagnosticInfo[] = [];
 
-  ballerinaBestPractices.forEach((rule) => {
-    const regex = new RegExp(rule.pattern, "g");
+  ballerinaBestPractices.forEach((rule: BallerinaRule) => {
+    const regex = new RegExp(rule.pattern);
     let match;
 
-    while ((match = regex.exec(text)) !== null) {
+    // Clone the regex to ensure we can reset it
+    const clonedRegex = new RegExp(rule.pattern.source, rule.pattern.flags);
+
+    while ((match = clonedRegex.exec(text)) !== null) {
       const range = new vscode.Range(
         document.positionAt(match.index),
         document.positionAt(match.index + match[0].length)
@@ -26,8 +29,13 @@ export function executeAllRules(
         range: range,
         message: rule.message,
         severity: vscode.DiagnosticSeverity.Warning,
-        code: rule.pattern.toString(),
+        code: "ballerina-best-practice", // Add a consistent code for all best practices
       });
+
+      // Prevent infinite loops for zero-length matches
+      if (match.index === clonedRegex.lastIndex) {
+        clonedRegex.lastIndex++;
+      }
     }
   });
 
