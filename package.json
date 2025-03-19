@@ -2,7 +2,7 @@
   "name": "ballerina-lint",
   "displayName": "ballerina-lint",
   "description": "A fully functional Ballerina best practices checker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "PramithaMJ",
   "repository": {
     "type": "git",

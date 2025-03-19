@@ -1,6 +1,6 @@
 # Ballerina Lint
 
-[![License: Apache](https://img.shields.io/badge/License-Apache-yellow.svg)](https://opensource.org/licenses/Apache) [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/PramithaMJ/ballerina-lint/releases/tag/v1.0.0) [![Ballerina](https://img.shields.io/badge/Ballerina-2.0.0-20b6b0.svg)](https://ballerina.io/)
+[![License: Apache](https://img.shields.io/badge/License-Apache-yellow.svg)](https://opensource.org/licenses/Apache) [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/PramithaMJ/ballerina-lint/releases/tag/v1.1.0) [![Ballerina](https://img.shields.io/badge/Ballerina-2.0.0-20b6b0.svg)](https://ballerina.io/)
 
 A fully functional Ballerina best practices checker extension for Visual Studio Code. This linter helps developers adhere to Ballerina programming best practices, enhancing code quality and maintainability.
 
@@ -50,29 +50,6 @@ A fully functional Ballerina best practices checker extension for Visual Studio 
 ### Supported Best Practices
 
 This extension checks for a comprehensive set of best practices in the following categories:
-1. **Proper Error Handling**
-   - Ensure errors are properly handled and not ignored
-   - Check for appropriate error propagation
-
-2. **Memory Management**
-   - Identify potential memory leaks
-   - Suggest optimizations for resource-intensive operations
-
-3. **API Design Principles**
-   - Check for consistent API naming conventions
-   - Ensure proper documentation of public APIs
-
-4. **Concurrency Best Practices**
-   - Detect common concurrency pitfalls
-   - Suggest improvements for concurrent code
-
-5. **Security Practices**
-   - Identify potential security vulnerabilities
-   - Enforce secure coding patterns
-
-6. **Performance Optimizations**
-   - Suggest more efficient code alternatives
-   - Highlight performance bottlenecks
 
 #### 1. Nil Handling
 - Using nil (`()`) to represent optional values instead of empty strings
@@ -137,15 +114,33 @@ This extension checks for a comprehensive set of best practices in the following
 
 ## Installation
 
-Since this extension is not yet available on the VS Code Marketplace, you can install it using the VSIX package:
+### Option 1: Manual Installation from GitHub Releases
 
-1. Download the latest VSIX package from the [GitHub releases page](https://github.com/PramithaMJ/ballerina-lint/releases)
-2. Open VS Code
-3. Go to the Extensions view (View → Extensions or press `Ctrl+Shift+X`)
-4. Click on the "..." menu (top-right of the Extensions view)
-5. Select "Install from VSIX..."
-6. Navigate to and select the downloaded ballerina-lint-1.0.0.vsix file
-7. Restart VS Code when prompted
+1. Download the latest VSIX file from our [GitHub Releases page](https://github.com/PramithaMJ/ballerina-lint/releases/latest)
+2. In VS Code, go to Extensions (Ctrl+Shift+X)
+3. Click the "..." menu in the top-right corner
+4. Select "Install from VSIX..."
+5. Choose the downloaded `ballerina-lint-1.1.0.vsix` file
+6. Restart VS Code when prompted
+
+### Option 2: Building from Source
+
+For the latest development version:
+
+```bash
+# Clone the repository
+git clone https://github.com/PramithaMJ/ballerina-lint.git
+cd ballerina-lint
+
+# Install dependencies
+npm install
+
+# Package the extension
+npm install -g @vscode/vsce
+vsce package
+
+# This will create a .vsix file you can install as described above
+```
 
 ## Requirements
 
@@ -183,6 +178,25 @@ To test the extension with sample code that demonstrates various best practices:
    - `formatDocTest.bal` - Tests for formatting and documentation rules
 
 3. Run the extension in debug mode (F5) and open these test files to see the linter in action
+
+### Updating from v1.0.0 to v1.1.0
+
+If you have the previous version installed, please follow these steps:
+
+1. Open VS Code
+2. Go to Extensions (Ctrl+Shift+X)
+3. Find "Ballerina Lint" in your installed extensions
+4. Click the gear icon and select "Uninstall"
+5. Restart VS Code
+6. Install version 1.1.0 using the instructions above
+
+## What's New in v1.1.0
+
+- Added new rules for formatting and documentation best practices
+- Added rules for configuration management
+- Added dependency management rules
+- Improved existing rules for better accuracy
+- Fixed issue with constant naming convention detection
 
 ## Coming Soon
 
